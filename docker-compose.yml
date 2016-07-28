@@ -1,0 +1,10 @@
+---
+forked-daapd:
+  build: .
+  restart: always
+  net: "host"
+  volumes:
+    - '/media:/media'
+    - '/var/cache/forked-daapd:/var/cache/forked-daapd'
+  environment:
+    DAAPD_NAME: Dockerized
