@@ -51,6 +51,7 @@ docker-compose up -d
 5. Now the iOS device is paired with the iTunes server.
 
 ## Acknowledgements
-This is based on StefanScherer/rpi-forked-daapd
+This is based on StefanScherer/rpi-forked-daapd (https://github.com/StefanScherer/rpi-forked-daapd)
+
 Many thanks to John Bintz's repo https://github.com/johnbintz/johns-docker-stuff for inspiration.
 
