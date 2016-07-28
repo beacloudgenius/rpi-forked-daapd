@@ -1,4 +1,4 @@
-# rpi-forked-daapd
+# rpi-forked-daapd with spotify and mpd support
 
 Run an iTunes server on your Raspberry Pi in a Docker container.
 
@@ -33,6 +33,8 @@ As the iTunes server depends on mDNS / avahi we need to start the container with
 docker run -d --net host --name forked-daapd -v /home/media:/media -e DAAPD_NAME=Dockerized -v /home/localdb:/var/cache/forked-daapd forked-daapd
 ```
 
+## or just run docker-compose up -d 
+
 ## Pair your iOS device with the iTunes server
 
 1. Download the Remote app from the App Store.
@@ -45,6 +47,6 @@ docker run -d --net host --name forked-daapd -v /home/media:/media -e DAAPD_NAME
 5. Now the iOS device is paired with the iTunes server.
 
 ## Acknowledgements
-
+This is based on StefanScherer/rpi-forked-daapd
 Many thanks to John Bintz's repo https://github.com/johnbintz/johns-docker-stuff for inspiration.
 
