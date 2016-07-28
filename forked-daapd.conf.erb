@@ -49,3 +49,53 @@ library {
 	# AirTunes password
 #	password = "s1kr3t"
 #}
+
+# Spotify settings (only have effect if Spotify enabled - see README/INSTALL)
+spotify {
+        # Directory where user settings should be stored (credentials)
+#       settings_dir = "/var/cache/forked-daapd/libspotify"
+
+        # Cache directory
+#       cache_dir = "/tmp"
+
+        # Set preferred bitrate for music streaming
+        # 0: No preference (default), 1: 96kbps, 2: 160kbps, 3: 320kbps
+#       bitrate = 0
+
+        # Your Spotify playlists will by default be put in a "Spotify" playlist
+        # folder. If you would rather have them together with your other
+        # playlists you can set this option to true.
+#       base_playlist_disable = false
+
+        # Spotify playlists usually have many artist, and if you don't want every
+        # artist to be listed when artist browsing in Remote, you can set the
+        # artist_override flag to true. This will use the compilation_artist as
+        # album artist for spotify items that are not in the starred playlist.
+#       artist_override = false
+
+        # Similar to the different artists in spotify playlists, the playlist items
+        # belong to different albums, and if you do not want every album to be listed
+        # when browsing in Remote, you can set the album_override flag to true. This
+        # will use the playlist name as album name for spotify items that are not in
+        # the starred playlist. Notice that if an item is in more than one playlist,
+        # it will only appear in one album when browsing (in which album is random).
+#       album_override = false
+}
+
+# MPD configuration (only have effect if MPD enabled - see README/INSTALL)
+mpd {
+        # TCP port to listen on for MPD client requests.
+        # Default port is 6600, set to 0 to disable MPD support.
+#       port = 6600
+
+        # HTTP port to listen for artwork requests (only supported by some MPD clients
+        # and will need additional configuration in the MPD client to work).
+        # Set to 0 to disable serving artwork over http.
+#       http_port = 0
+
+        # By default forked-daapd will - like iTunes - clear the playqueue if playback stops.
+        # Setting clear_queue_on_stop_disable to true will keep the playlist like MPD does.
+        # Note that some dacp clients do not show the playqueue if playback is stopped.
+#       clear_queue_on_stop_disable = false
+}
+
