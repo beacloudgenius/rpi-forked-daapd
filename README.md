@@ -33,7 +33,11 @@ As the iTunes server depends on mDNS / avahi we need to start the container with
 docker run -d --net host --name forked-daapd -v /home/media:/media -e DAAPD_NAME=Dockerized -v /home/localdb:/var/cache/forked-daapd forked-daapd
 ```
 
-## or just run docker-compose up -d 
+## Docker-Compose
+
+```
+docker-compose up -d 
+```
 
 ## Pair your iOS device with the iTunes server
 
