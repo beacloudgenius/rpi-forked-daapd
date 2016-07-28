@@ -34,6 +34,12 @@ library {
 #	no_transcode = { "alac", "mp4a" }
 	# Formats that should always be transcoded
 #	force_transcode = { "ogg", "flac" }
+        
+        # Internet streams in your playlists will by default be shown in the
+        # "Radio" library, like iTunes does. However, some clients (like
+        # TunesRemote+) won't show the "Radio" library. If you would also like
+        # to have them shown like normal playlists, you can enable this option.
+        radio_playlists = true
 }
 
 # Local audio output
