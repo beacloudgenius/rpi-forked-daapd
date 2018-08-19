@@ -41,9 +41,10 @@ docker-compose up -d
 
 ## open browser http://ip:3689
 
+```
 login admin
 pass  usused
-
+```
 
 ## Pair your iOS device with the iTunes server
 
