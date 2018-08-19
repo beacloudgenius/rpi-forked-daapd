@@ -39,6 +39,12 @@ docker run -d --net host --name forked-daapd -v /home/media:/media -e DAAPD_NAME
 docker-compose up -d 
 ```
 
+## open browser http://ip:3689
+
+login admin
+pass  usused
+
+
 ## Pair your iOS device with the iTunes server
 
 1. Download the Remote app from the App Store.
