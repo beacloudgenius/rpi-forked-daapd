@@ -1,10 +1,18 @@
-FROM resin/rpi-raspbian
-MAINTAINER steffen <devnull@snizzle.org>
+FROM resin/rpi-raspbian:stretch
+MAINTAINER Nilesh nilesh@cloudgeni.us
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBIAN_PRIORITY critical
 ENV DEBCONF_NOWARNINGS yes
 
-RUN echo  "\n deb http://www.gyfgafguf.dk/raspbian jessie/armhf/ \n deb http://apt.mopidy.com/ stable main contrib non-free" >> /etc/apt/sources.list
+RUN apt update && apt install  -y apt-transport-https
+RUN rm -f /etc/apt/trusted.gpg~
+
+RUN echo  "deb http://www.gyfgafguf.dk/raspbian/forked-daapd/ stretch contrib \ndeb http://apt.mopidy.com/ stable main contrib non-free" >> /etc/apt/sources.list
+
+RUN curl -O http://www.gyfgafguf.dk/raspbian/forked-daapd.gpg
+RUN apt-key add forked-daapd.gpg 
+RUN curl -O https://apt.mopidy.com/mopidy.gpg 
+RUN apt-key add mopidy.gpg
 
 RUN apt-get update
 RUN apt-get install --no-install-recommends -y avahi-utils libspotify-dev forked-daapd ruby

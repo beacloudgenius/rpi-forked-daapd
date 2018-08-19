@@ -4,7 +4,7 @@ forked-daapd:
   restart: always
   net: "host"
   volumes:
-    - '/media:/media'
+    - './media:/media'
     - '/var/cache/forked-daapd:/var/cache/forked-daapd'
   environment:
     DAAPD_NAME: Dockerized
