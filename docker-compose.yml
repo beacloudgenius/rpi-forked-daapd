@@ -1,10 +1,23 @@
----
-forked-daapd:
-  build: .
-  restart: always
-  net: "host"
-  volumes:
-    - './media:/media'
-    - '/var/cache/forked-daapd:/var/cache/forked-daapd'
-  environment:
-    DAAPD_NAME: Dockerized
+version: "3.5"
+
+services:
+  forked-daapd:
+    build: .
+    restart: always
+    net: "host"
+    volumes:
+      - "/var/cache/forked-daapd:/var/cache/forked-daapd"
+      - type: volume
+        source: freenas
+        target: /media
+        volume:
+          nocopy: true
+    environment:
+      DAAPD_NAME: Dockerized
+
+volumes:
+  freenas:
+    driver_opts:
+      type: "nfs"
+      o: "addr=cosmos.cloudgeni.us,nolock,soft,rw"
+      device: ":/mnt/tank/plexbox"
