@@ -1,10 +1,22 @@
 version: "3.5"
 
+networks:
+  default:
+    external:
+      name: bridge
+
+volumes:
+  freenas:
+    driver_opts:
+      type: "nfs"
+      o: "addr=cosmos.cloudgeni.us,nolock,soft,rw"
+      device: ":/mnt/tank/plexbox"
+
 services:
   forked-daapd:
     build: .
     restart: always
-    net: "host"
+    network_mode: "host"
     volumes:
       - "/var/cache/forked-daapd:/var/cache/forked-daapd"
       - type: volume
@@ -14,10 +26,3 @@ services:
           nocopy: true
     environment:
       DAAPD_NAME: Dockerized
-
-volumes:
-  freenas:
-    driver_opts:
-      type: "nfs"
-      o: "addr=cosmos.cloudgeni.us,nolock,soft,rw"
-      device: ":/mnt/tank/plexbox"
