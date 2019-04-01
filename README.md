@@ -92,3 +92,14 @@ wpasupplicant configuration:
     openssl_ciphers=DEFAULT@SECLEVEL=2
 
 Unlike wpasupplicant, hostapd still respects system defaults.
+
+also read
+https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=49928
+
+https://github.com/StefanScherer/logbook/blob/master/Install-forked-daapd-on-Raspberry-Pi.md
+
+https://github.com/ejurgensen/forked-daapd
+
+https://ejurgensen.github.io/forked-daapd/
+
+https://github.com/ejurgensen/forked-daapd/blob/master/INSTALL

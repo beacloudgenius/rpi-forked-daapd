@@ -19,6 +19,7 @@ services:
     network_mode: "host"
     volumes:
       - "/var/cache/forked-daapd:/var/cache/forked-daapd"
+      - "./forked-daapd.conf.erb:/etc/forked-daapd.conf.erb"
       - type: volume
         source: freenas
         target: /media
